@@ -1,0 +1,85 @@
+body {
+    margin: 0%;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+.links {
+    display: flex; 
+    gap: 15px;
+}
+
+.portrait {
+  width: 300px;
+  height: 400px;
+}
+
+.stamp {
+    width: 70px;
+  height: 70px;
+}
+
+.special {
+    margin-top: 50px;
+}
+
+.pictures {
+    min-height: 100vh; 
+    width: auto;
+    background-color: black;
+    display: flex;
+
+    justify-content: center; 
+    align-items: center;
+}
+
+.pictures-center {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.aboutme {
+    min-height: 100vh; 
+    width: auto;
+    background-color: white;
+    display: flex;
+    
+  border: solid white 10px;
+  margin: 10px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.aboutmeintros {
+    max-width: 700px;
+    text-align: left;
+}
+
+.dropdownmenu {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownmenupages {
+  display: none;
+  position: absolute;
+  height: 30px;
+  width: auto;
+}
+
+.dropdownmenu:hover > .dropdownmenupages, 
+.dropdownmenu:focus-within > .dropdownmenupages {
+  display: block;
+  opacity: 1;
+  transform-translate:y(0);
+  
+}
+

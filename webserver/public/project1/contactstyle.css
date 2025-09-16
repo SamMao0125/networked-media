@@ -1,0 +1,74 @@
+body {
+    margin: 0%;
+}
+
+img {
+  width: 100px;
+  height: auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+.links {
+    display: flex; 
+    gap: 15px;
+}
+
+.allinfo {
+    text-align: center;
+    color: white;
+
+    min-height: 100vh; 
+    width: auto;
+    background-color: black;
+    display: flex;
+
+    justify-content: center; 
+    align-items: center;
+
+    gap: 10px;
+}
+
+.stamplogo {
+    height: 200px;
+    width: auto;
+}
+
+.contactinfo {
+    justify-content: center;
+    text-align: left;
+    line-height: 0.2;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    text-align: right;
+    padding: 15px;
+}
+
+.dropdownmenu {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownmenupages {
+  display: none;
+  position: absolute;
+  height: 30px;
+  width: auto;
+}
+
+.dropdownmenu:hover > .dropdownmenupages, 
+.dropdownmenu:focus-within > .dropdownmenupages {
+  display: block;
+  opacity: 1;
+  transform-translate:y(0);
+  
+}

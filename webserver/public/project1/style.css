@@ -1,0 +1,48 @@
+body {
+    margin: 0%;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+p {
+  text-align: right;
+  padding: 15px;
+}
+
+.special{
+  margin-top: 50px;
+}
+    
+.menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.links {
+  display: flex; 
+  gap: 15px;
+}
+
+.dropdownmenu {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownmenupages {
+  display: none;
+  position: absolute;
+  height: 30px;
+  width: auto;
+}
+
+.dropdownmenu:hover > .dropdownmenupages, 
+.dropdownmenu:focus-within > .dropdownmenupages {
+  display: block;
+  opacity: 1;
+  transform-translate:y(0);
+  
+}
