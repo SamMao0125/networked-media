@@ -1,0 +1,117 @@
+@font-face {
+    font-family: "cat-font";
+    src: url("font/Modak-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
+body {
+    margin: 0%;
+}
+
+.tracks {
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 400px;
+    border: 60px solid rgb(153, 221, 217);
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.white-rectangle {
+    width: 800px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    box-sizing: border-box;
+    border-radius: 400px;
+}
+
+.inner-tracks {
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 300px;
+    border: 60px solid rgb(133, 194, 190);
+    box-sizing: border-box;
+}
+
+.shark {
+    width: 140px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: scaleX(-1); 
+}
+
+.small-shark {
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: scaleX(-1); 
+}
+
+.shark, .small-shark {
+    transition: transform 0.5s linear;
+}
+
+.kitty {
+    width: 350px;
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 40px);
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+}
+
+.kitty-image-loaf, .kitty-image-bellay {
+    width: 100%;
+}
+
+.kitty-image-loaf {
+    width: 70%;
+}
+
+.kitty .kitty-image-loaf {
+    display: flex;
+}
+
+.kitty .kitty-image-bellay {
+    display: none;
+}
+
+.kitty-move {
+    transform: translate(-50%, -150%);
+}
+
+.kitty-move .kitty-image-loaf {
+    display: none;
+}
+
+.kitty-move .kitty-image-bellay {
+    display: flex;
+}
+
+.digital-clock {
+    display: flex; 
+    font-size: 60px;
+    color: pink;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "cat-font";
+    font-weight: normal;
+}
