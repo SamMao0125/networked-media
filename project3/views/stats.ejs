@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/stats.css">
+        <title>Stats</title>
+    </head>
+    <body>
+        <div class="title">
+            <h2>Wish Statistics</h2>
+        </div>
+
+        <div class="back-to-fountain-button">
+            <a href="/">Back to Fountain to Wish?</a>
+        </div>
+
+        <div class="stats">
+
+            <div class="subtitle"> 
+                <p>Here are all the stats, all past wishes... See where you fit?</p>
+            </div>
+            
+            <% 
+            const sortedWishes = Object.entries(wishStats).sort((a, b) => b[1] - a[1]);
+            const totalWishes = sortedWishes.reduce((sum, [wish, count]) => sum + count, 0);
+            %>
+            
+            <div class="total-wishes">
+                <strong>Here are wishes' stats: <%= totalWishes %></strong>
+            </div>
+
+            <div class="wishes-stats-list">
+                <% if (sortedWishes.length === 0) { %>
+                    <p>No wishes made yet... Be the first!</p>
+                <% } else { %>
+                    <% sortedWishes.forEach(([wishType, count]) => { %>
+                        <div class="item">
+                            <span class="name"><%= wishType %></span>
+                            <span class="count"><%= count %> (<%= totalWishes > 0 ? ((count / totalWishes * 100).toFixed(1)) : 0 %>%)</span>
+                        </div>
+                    <% }); %>
+                <% } %>
+            </div>
+        </div>
+    </body>
+</html>

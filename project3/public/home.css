@@ -1,0 +1,107 @@
+body {
+    margin: 0%;
+    overflow: hidden;
+}
+
+.fountain-title {
+    position: fixed;
+    top: 130px;
+    left: 560px;
+}
+
+.title {
+    width: 400px; 
+    height: auto;
+}
+
+.fountain-image {
+    height: 100vh;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    color: white;
+}
+
+.fountain {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wish-button {
+    position: fixed;
+    height: 50px;
+    width: auto;
+    bottom: 40px;
+    right: 550px;
+}
+
+.leave-button {
+    position: fixed;
+    height: 50px;
+    width: auto;
+    top: 10px;
+    left: 10px;
+}
+
+.stats-button {
+    position: fixed;
+    height: 50px;
+    width: auto;
+    top: 10px;
+    right: 10px;
+}
+
+.luck-button {
+    position: fixed;
+    height: 40px;
+    width: auto;
+    bottom: 10px;
+    left: 400px;
+}
+
+.love-button {
+    position: fixed;
+    height: 40px;
+    width: auto;
+    bottom: 10px;
+    left: 500px;
+}
+
+.money-button {
+    position: fixed;
+    height: 50px;
+    width: auto;
+    bottom: 10px;
+    left: 600px;
+}
+
+.input-button {
+    height: 50px;
+    width: 600px;
+    position: fixed;
+    bottom: 10px;
+    right: 200px;
+    border: none;
+    background: url("/images/other-wishes.png") no-repeat center;
+    background-size: contain;
+    padding: 0 30px;  
+    font-size: 18px;
+    outline: none;
+    color: #988955;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;  
+}
+
+.input-button::placeholder {
+    color: transparent;
+}
+
+.input-button:focus {
+    background-color: #98e4ea;
+    background-blend-mode: lighten;
+    opacity: 50%;
+    border-radius: 50px;
+}

@@ -1,0 +1,24 @@
+body {
+    margin: 0%;
+    overflow: hidden;
+}
+
+.left-text {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-to-fountain-button {
+    position:fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.check-stats-after-leave {
+    position:fixed;
+    top: 425px;
+    right: 657px;
+}

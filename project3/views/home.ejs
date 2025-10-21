@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/home.css">
+        <title>Wishing Fountain</title>
+    </head>
+    <body>
+
+        <div class="fountain-title">
+            <!-- <p>Wish for stuff here twin</p> -->
+
+            <img class="title" src = "images/fountain-title.png">
+
+        </div>
+
+        <div class="fountain"> 
+            <!-- <img class="fountain-image" src = "/images/fountain.png"> -->
+
+            <img class="fountain-image" src = "/images/fountain-1.png" id="fountain-img">
+        </div>
+
+        <div class="wish-button">
+            <img class="wish-button" src = "images/wish-button.jpg" id="wish-button">
+        </div>
+
+        <div class="leave-button">
+            <a href="leave">
+                <img class="leave-button" src = "images/leave-button.png">
+            </a>
+        </div>
+
+        <div class="stats-button">
+            <a href="stats">
+                <img class="stats-button" src = "images/stats-button.png">
+            </a>
+        </div>
+
+        <div class="luck-button">
+            <img class="luck-button" src = "images/luck-button.png" id="luck-button">
+        </div>
+
+        <div class="love-button">
+            <img class="love-button" src = "images/love-button.png" id="love-button">
+        </div>
+
+        <div class="money-button">
+            <img class="money-button" src = "images/money-button.png" id="money-button">
+        </div>
+
+        <div>
+            <input
+            type="text"
+            placeholder="Other wishes?"
+            class="input-button"
+            id="input-button"
+            />
+
+            <img class="other-wishes" src = "images/other-wishes.png" id="custom-wish-button">
+        </div>
+
+        <script>
+            async function recordWish(wishType) {
+
+                const audio = new Audio('/sounds/water-splash.mp3');
+                audio.play();
+
+                try {
+                    const response = await fetch('/record-wish', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ wishType: wishType })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        console.log(`${wishType} recorded! Total count: ${data.count}`);
+                        showWishFeedback(wishType);
+                    }
+                } catch (error) {
+                    console.error('Error recording wish:', error);
+                }
+            }
+
+            function showWishFeedback(wishType) {
+                console.log(`Wished for ${wishType}!`);
+            }
+
+            document.getElementById('luck-button').addEventListener('click', function(e) {
+                e.preventDefault();
+                recordWish('Luck');
+            });
+
+            document.getElementById('love-button').addEventListener('click', function(e) {
+                e.preventDefault();
+                recordWish('Love');
+            });
+
+            document.getElementById('money-button').addEventListener('click', function(e) {
+                e.preventDefault();
+                recordWish('Money');
+            });
+
+            document.getElementById('wish-button').addEventListener('click', function(e) {
+                e.preventDefault();
+                const customWish = document.getElementById('input-button').value.trim();
+                
+                if (customWish) {
+                    recordWish(customWish);
+                    document.getElementById('input-button').value = '';
+                } else {
+                    alert('Please enter a wish first!');
+                }
+            });
+
+            document.getElementById('input-button').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    document.getElementById('wish-button').click();
+                }
+            });
+
+            document.getElementById('custom-wish-button').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('wish-button').click();
+            });
+
+            let currentFrame = 1;
+            const totalFrames = 5;
+            
+            setInterval(function() {
+                currentFrame = (currentFrame % totalFrames) + 1;
+                document.getElementById('fountain-img').src = `/images/fountain-${currentFrame}.png`;
+            }, 200);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+body {
+    margin: 0%;
+    overflow: hidden;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subtitle {
+    position:fixed;
+    top: 50px;
+   left: 10px;
+}
+
+.back-to-fountain-button {
+   position:fixed;
+   top: 10px;
+   left: 10px;
+} 
+
+.total-wishes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wishes-stats-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
