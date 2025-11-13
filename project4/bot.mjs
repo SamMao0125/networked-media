@@ -20,7 +20,19 @@ fetch("http://142.93.207.37:7001/all-posts")
 
 function makeStatus() {
   let post = allPosts[counter];
-  let text = post.object + " " + post.location + " " + post.refereceObject;
+  
+  let location = "";
+  if (post.location == "on") {
+    location = "+/()";
+  }
+  if (post.location == "inside") {
+    location = "(-)";
+  }
+  if (post.location == "beside") {
+    location = "±()";
+  }
+  
+  let text = post.object + location + post.refereceObject;
   
   masto.v1.statuses.create({
     status: text,
